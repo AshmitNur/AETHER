@@ -21,16 +21,16 @@ const ChatInterface: React.FC<ChatInterfaceProps> = ({ filesContent }) => {
   ]);
   const [inputValue, setInputValue] = useState('');
   const [isLoading, setIsLoading] = useState(false);
-  
+
   // Track the ID of the message currently playing audio
   const [isPlayingAudio, setIsPlayingAudio] = useState<string | null>(null);
-  
+
   const [isRecording, setIsRecording] = useState(false);
   const [isConnectingLive, setIsConnectingLive] = useState(false);
 
   const messagesEndRef = useRef<HTMLDivElement>(null);
   const textareaRef = useRef<HTMLTextAreaElement>(null);
-  
+
   // Audio Playback Refs
   const stopAudioRef = useRef<(() => void) | null>(null);
   const activeTTSIdRef = useRef<string | null>(null);
@@ -108,7 +108,7 @@ const ChatInterface: React.FC<ChatInterfaceProps> = ({ filesContent }) => {
         const inputData = e.inputBuffer.getChannelData(0);
         const int16Data = float32ToInt16(inputData);
         const base64Data = arrayBufferToBase64(int16Data.buffer);
-        
+
         if (liveSessionRef.current) {
           liveSessionRef.current.sendAudio(base64Data);
         }
@@ -157,7 +157,7 @@ const ChatInterface: React.FC<ChatInterfaceProps> = ({ filesContent }) => {
 
   const toggleRecording = () => {
     if (isConnectingLive) return;
-    
+
     if (isRecording) {
       stopRecording();
     } else {
@@ -193,34 +193,43 @@ const ChatInterface: React.FC<ChatInterfaceProps> = ({ filesContent }) => {
     setMessages(prev => [...prev, botMessagePlaceholder]);
 
     let fullText = '';
-    
+
     // Prepare history for API
     const history = messages.map(m => ({
       role: m.role,
       parts: [{ text: m.text }]
     }));
 
-    await streamChatResponse(
-      userMessage.text,
-      history,
-      filesContent,
-      (chunk) => {
-        fullText += chunk;
-        setMessages(prev => prev.map(msg => 
-          msg.id === botMessageId 
-            ? { ...msg, text: fullText, isStreaming: true } 
-            : msg
-        ));
-      }
-    );
-
-    // Finalize message state
-    setMessages(prev => prev.map(msg => 
-      msg.id === botMessageId 
-        ? { ...msg, isStreaming: false, isThinking: false } 
-        : msg
-    ));
-    setIsLoading(false);
+    try {
+      await streamChatResponse(
+        userMessage.text,
+        history,
+        filesContent,
+        (chunk) => {
+          fullText += chunk;
+          setMessages(prev => prev.map(msg =>
+            msg.id === botMessageId
+              ? { ...msg, text: fullText, isStreaming: true }
+              : msg
+          ));
+        }
+      );
+    } catch (error) {
+      console.error("Chat Error:", error);
+      setMessages(prev => prev.map(msg =>
+        msg.id === botMessageId
+          ? { ...msg, text: "I encountered an error. Please check your API Key configuration.", isStreaming: false }
+          : msg
+      ));
+    } finally {
+      // Finalize message state
+      setMessages(prev => prev.map(msg =>
+        msg.id === botMessageId
+          ? { ...msg, isStreaming: false, isThinking: false }
+          : msg
+      ));
+      setIsLoading(false);
+    }
   };
 
   const handleTTS = async (text: string, msgId: string) => {
@@ -245,7 +254,7 @@ const ChatInterface: React.FC<ChatInterfaceProps> = ({ filesContent }) => {
 
     try {
       const base64Audio = await generateSpeech(text);
-      
+
       // If user switched to another message or stopped while fetching
       if (activeTTSIdRef.current !== msgId) return;
 
@@ -281,42 +290,42 @@ const ChatInterface: React.FC<ChatInterfaceProps> = ({ filesContent }) => {
 
   return (
     <div className="flex flex-col h-full relative p-6 lg:p-10">
-      
+
       {/* Messages Area */}
       <div className="flex-1 overflow-y-auto pt-10 pb-10 px-4 space-y-8 scroll-smooth max-w-5xl mx-auto w-full custom-scrollbar">
         <AnimatePresence initial={false} mode="popLayout">
           {messages.map((msg) => {
             const isUser = msg.role === 'user';
             return (
-              <motion.div 
-                key={msg.id} 
+              <motion.div
+                key={msg.id}
                 layout
-                initial={isUser 
-                  ? { opacity: 0, scale: 0.9, y: 20 } 
+                initial={isUser
+                  ? { opacity: 0, scale: 0.9, y: 20 }
                   : { opacity: 0, scale: 0.85, x: -20, filter: 'blur(5px)' }
                 }
                 animate={isUser
                   ? { opacity: 1, scale: 1, y: 0 }
                   : { opacity: 1, scale: 1, x: 0, filter: 'blur(0px)' }
                 }
-                transition={isUser 
+                transition={isUser
                   ? { type: "spring", stiffness: 400, damping: 25, mass: 1 }
                   : { type: "spring", stiffness: 200, damping: 20, mass: 1.2 }
                 }
                 className={`flex w-full ${isUser ? 'justify-end' : 'justify-start'}`}
               >
                 <div className={`max-w-[85%] lg:max-w-[75%] group relative`}>
-                  
+
                   <div className={`
                     p-6 lg:p-8 rounded-[2rem] relative overflow-hidden backdrop-blur-md shadow-lg transition-all duration-300
-                    ${isUser 
-                      ? 'bg-gradient-to-br from-indigo-600/40 to-purple-600/40 border border-indigo-500/30 text-white rounded-tr-md' 
+                    ${isUser
+                      ? 'bg-gradient-to-br from-indigo-600/40 to-purple-600/40 border border-indigo-500/30 text-white rounded-tr-md'
                       : 'bg-white/[0.03] border border-white/10 text-white/90 rounded-tl-md'}
                     ${isPlayingAudio === msg.id ? 'ring-1 ring-cyan-400/50 shadow-[0_0_20px_rgba(34,211,238,0.2)]' : ''}
                   `}>
                     {/* Glossy overlay */}
                     <div className="absolute inset-0 bg-gradient-to-b from-white/5 to-transparent pointer-events-none" />
-                    
+
                     <div className="relative z-10 whitespace-pre-wrap leading-relaxed text-base lg:text-lg font-light">
                       {renderMessageText(msg.text)}
                       {msg.isStreaming && <span className="inline-block w-2 h-5 ml-2 bg-cyan-400 animate-pulse align-middle rounded-full shadow-[0_0_10px_#22d3ee]" />}
@@ -325,13 +334,13 @@ const ChatInterface: React.FC<ChatInterfaceProps> = ({ filesContent }) => {
 
                   {/* Actions for Bot Message */}
                   {!isUser && !msg.isStreaming && msg.text && (
-                    <motion.div 
+                    <motion.div
                       initial={{ opacity: 0, x: -10 }}
                       animate={{ opacity: 1, x: 0 }}
                       transition={{ delay: 0.2, type: "spring" }}
                       className={`absolute -right-14 top-4 transition-all duration-300 flex flex-col gap-3 translate-x-[-10px] ${isPlayingAudio === msg.id ? 'opacity-100 translate-x-0' : 'opacity-0 group-hover:opacity-100 group-hover:translate-x-0'}`}
                     >
-                      <motion.button 
+                      <motion.button
                         whileHover={{ scale: 1.1 }}
                         whileTap={{ scale: 0.9 }}
                         onClick={() => handleTTS(msg.text, msg.id)}
@@ -342,7 +351,7 @@ const ChatInterface: React.FC<ChatInterfaceProps> = ({ filesContent }) => {
                       </motion.button>
                     </motion.div>
                   )}
-                  
+
                   <span className={`text-[11px] font-medium tracking-wider text-white/20 mt-2 block ${isUser ? 'text-right pr-2' : 'text-left pl-2'}`}>
                     {msg.timestamp.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })}
                   </span>
@@ -357,7 +366,7 @@ const ChatInterface: React.FC<ChatInterfaceProps> = ({ filesContent }) => {
       {/* Input Area */}
       <div className="max-w-4xl mx-auto w-full pb-6 relative z-20">
         <GlassCard className="relative flex items-end gap-2 bg-black/40 backdrop-blur-2xl border-white/10 shadow-2xl p-2 rounded-[2rem]">
-          
+
           <textarea
             ref={textareaRef}
             value={inputValue}
@@ -370,25 +379,25 @@ const ChatInterface: React.FC<ChatInterfaceProps> = ({ filesContent }) => {
             style={{ minHeight: '56px' }}
           />
 
-          <motion.button 
-             whileHover={{ scale: 1.1, backgroundColor: 'rgba(255,255,255,0.1)' }}
-             whileTap={{ scale: 0.9 }}
-             transition={{ type: "spring", stiffness: 400, damping: 20 }}
-             className={`p-3 rounded-full transition-colors duration-300 flex-shrink-0 mb-1 ${isRecording ? 'bg-red-500/20 text-red-400 shadow-[0_0_20px_rgba(248,113,113,0.4)] animate-pulse' : 'text-white/50 hover:text-white'}`}
-             onClick={toggleRecording}
-             title={isRecording ? "Stop Recording" : "Speak"}
-             disabled={isConnectingLive}
+          <motion.button
+            whileHover={{ scale: 1.1, backgroundColor: 'rgba(255,255,255,0.1)' }}
+            whileTap={{ scale: 0.9 }}
+            transition={{ type: "spring", stiffness: 400, damping: 20 }}
+            className={`p-3 rounded-full transition-colors duration-300 flex-shrink-0 mb-1 ${isRecording ? 'bg-red-500/20 text-red-400 shadow-[0_0_20px_rgba(248,113,113,0.4)] animate-pulse' : 'text-white/50 hover:text-white'}`}
+            onClick={toggleRecording}
+            title={isRecording ? "Stop Recording" : "Speak"}
+            disabled={isConnectingLive}
           >
             {isConnectingLive ? <Loader2 size={24} className="animate-spin text-cyan-400" /> : <Mic size={24} />}
           </motion.button>
 
-          <motion.button 
-             whileHover={{ scale: 1.05, boxShadow: '0 0 30px rgba(59, 130, 246, 0.5)' }}
-             whileTap={{ scale: 0.95 }}
-             transition={{ type: "spring", stiffness: 400, damping: 20 }}
-             className="p-3 rounded-full bg-blue-600 text-white shadow-lg shadow-blue-600/20 transition-all disabled:opacity-50 disabled:cursor-not-allowed flex-shrink-0 mb-1"
-             onClick={handleSendMessage}
-             disabled={!inputValue.trim() || isLoading || isConnectingLive || isRecording}
+          <motion.button
+            whileHover={{ scale: 1.05, boxShadow: '0 0 30px rgba(59, 130, 246, 0.5)' }}
+            whileTap={{ scale: 0.95 }}
+            transition={{ type: "spring", stiffness: 400, damping: 20 }}
+            className="p-3 rounded-full bg-blue-600 text-white shadow-lg shadow-blue-600/20 transition-all disabled:opacity-50 disabled:cursor-not-allowed flex-shrink-0 mb-1"
+            onClick={handleSendMessage}
+            disabled={!inputValue.trim() || isLoading || isConnectingLive || isRecording}
           >
             <Send size={20} fill="currentColor" className="ml-0.5" />
           </motion.button>
