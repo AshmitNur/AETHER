@@ -1,0 +1,7 @@
+{
+  "name": "Aether - Student AI Assistant",
+  "description": "A futuristic, glassmorphic RAG-based student assistant using Gemini 2.5 Flash Lite for speed and Gemini TTS for voice.",
+  "requestFramePermissions": [
+    "microphone"
+  ]
+}

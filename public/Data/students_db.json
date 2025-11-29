@@ -1,0 +1,610 @@
+{
+  "students": [
+    {
+      "id": 1,
+      "name": "Yasmin Rafiq",
+      "cgpa": 0.35,
+      "department": "BA in English"
+    },
+    {
+      "id": 2,
+      "name": "Huda Majid",
+      "cgpa": 2.31,
+      "department": "Bachelor of Laws (LLB Hons)"
+    },
+    {
+      "id": 3,
+      "name": "Rami Hussain",
+      "cgpa": 2.01,
+      "department": "BS in Environmental Science and Environmental Management"
+    },
+    {
+      "id": 4,
+      "name": "Ibrahim Ibrahim",
+      "cgpa": 1.42,
+      "department": "Bachelor of Public Health (BPH)"
+    },
+    {
+      "id": 5,
+      "name": "Hassan Khalil",
+      "cgpa": 0.82,
+      "department": "BS in Computer Science & Engineering (CSE)"
+    },
+    {
+      "id": 6,
+      "name": "Dina Noor",
+      "cgpa": 2.65,
+      "department": "BPharm"
+    },
+    {
+      "id": 7,
+      "name": "Hakim Ibrahim",
+      "cgpa": 2.7,
+      "department": "BS in Civil & Environmental Engineering (CEE)"
+    },
+    {
+      "id": 8,
+      "name": "Amina Zahir",
+      "cgpa": 3.45,
+      "department": "Bachelor of Architecture"
+    },
+    {
+      "id": 9,
+      "name": "Laila Sharif",
+      "cgpa": 0.58,
+      "department": "BS in Electrical and Electronics Engineering (EEE)"
+    },
+    {
+      "id": 10,
+      "name": "Mustafa Rashid",
+      "cgpa": 2.93,
+      "department": "BS in Microbiology"
+    },
+    {
+      "id": 11,
+      "name": "Ayesha Sharif",
+      "cgpa": 1.77,
+      "department": "BS in Economics"
+    },
+    {
+      "id": 12,
+      "name": "Hamza Hussain",
+      "cgpa": 3.3,
+      "department": "BS in Environmental Science and Environmental Management"
+    },
+    {
+      "id": 13,
+      "name": "Leila Salim",
+      "cgpa": 0.57,
+      "department": "BS in Computer Science & Engineering (CSE)"
+    },
+    {
+      "id": 14,
+      "name": "Malika Ghani",
+      "cgpa": 0.94,
+      "department": "Bachelor of Architecture"
+    },
+    {
+      "id": 15,
+      "name": "Jamil Qadir",
+      "cgpa": 1.55,
+      "department": "Bachelor of Laws (LLB Hons)"
+    },
+    {
+      "id": 16,
+      "name": "Zainab Din",
+      "cgpa": 0.58,
+      "department": "Bachelor of Public Health (BPH)"
+    },
+    {
+      "id": 17,
+      "name": "Ali Farooq",
+      "cgpa": 1.63,
+      "department": "Bachelor of Public Health (BPH)"
+    },
+    {
+      "id": 18,
+      "name": "Reem Mansour",
+      "cgpa": 1.83,
+      "department": "BS in Economics"
+    },
+    {
+      "id": 19,
+      "name": "Mariam Youssef",
+      "cgpa": 1.76,
+      "department": "BS in Biochemistry and Biotechnology"
+    },
+    {
+      "id": 20,
+      "name": "Tariq Kareem",
+      "cgpa": 3.59,
+      "department": "BS in Environmental Science and Environmental Management"
+    },
+    {
+      "id": 21,
+      "name": "Yasmin Wali",
+      "cgpa": 0.59,
+      "department": "BPharm"
+    },
+    {
+      "id": 22,
+      "name": "Iman Ghani",
+      "cgpa": 2.38,
+      "department": "Bachelor of Public Health (BPH)"
+    },
+    {
+      "id": 23,
+      "name": "Sofia Zahir",
+      "cgpa": 1.29,
+      "department": "BS in Environmental Science and Environmental Management"
+    },
+    {
+      "id": 24,
+      "name": "Yusuf Rafiq",
+      "cgpa": 0.4,
+      "department": "BS in Electrical and Electronics Engineering (EEE)"
+    },
+    {
+      "id": 25,
+      "name": "Mustafa Hassan",
+      "cgpa": 2.54,
+      "department": "Bachelor of Laws (LLB Hons)"
+    },
+    {
+      "id": 26,
+      "name": "Yasmin Aziz",
+      "cgpa": 0.59,
+      "department": "BS in Microbiology"
+    },
+    {
+      "id": 27,
+      "name": "Leila Umar",
+      "cgpa": 2.87,
+      "department": "BPharm"
+    },
+    {
+      "id": 28,
+      "name": "Dina Dawoud",
+      "cgpa": 2.57,
+      "department": "Bachelor of Laws (LLB Hons)"
+    },
+    {
+      "id": 29,
+      "name": "Jamal Qadir",
+      "cgpa": 1.66,
+      "department": "BS in Electrical and Electronics Engineering (EEE)"
+    },
+    {
+      "id": 30,
+      "name": "Ali Omar",
+      "cgpa": 3.29,
+      "department": "BS in Environmental Science and Environmental Management"
+    },
+    {
+      "id": 31,
+      "name": "Najla Tahir",
+      "cgpa": 2.57,
+      "department": "Bachelor of Architecture"
+    },
+    {
+      "id": 32,
+      "name": "Reem Bakr",
+      "cgpa": 2.67,
+      "department": "BA in English"
+    },
+    {
+      "id": 33,
+      "name": "Hassan Zahir",
+      "cgpa": 1.4,
+      "department": "BS in Economics"
+    },
+    {
+      "id": 34,
+      "name": "Omar Hakim",
+      "cgpa": 3.88,
+      "department": "Bachelor of Public Health (BPH)"
+    },
+    {
+      "id": 35,
+      "name": "Mariam Tariq",
+      "cgpa": 3.96,
+      "department": "Bachelor of Laws (LLB Hons)"
+    },
+    {
+      "id": 36,
+      "name": "Mustafa Umar",
+      "cgpa": 1.05,
+      "department": "BS in Biochemistry and Biotechnology"
+    },
+    {
+      "id": 37,
+      "name": "Farhan Umar",
+      "cgpa": 3.65,
+      "department": "BA in English"
+    },
+    {
+      "id": 38,
+      "name": "Aisha Rahman",
+      "cgpa": 0.94,
+      "department": "BPharm"
+    },
+    {
+      "id": 39,
+      "name": "Tariq Khan",
+      "cgpa": 0.46,
+      "department": "BS in Electrical and Electronics Engineering (EEE)"
+    },
+    {
+      "id": 40,
+      "name": "Rami Bashir",
+      "cgpa": 1.98,
+      "department": "Bachelor of Laws (LLB Hons)"
+    },
+    {
+      "id": 41,
+      "name": "Samira Hakim",
+      "cgpa": 0.42,
+      "department": "Bachelor of Architecture"
+    },
+    {
+      "id": 42,
+      "name": "Fadi Latif",
+      "cgpa": 3.16,
+      "department": "Bachelor of Business Administration (BBA)"
+    },
+    {
+      "id": 43,
+      "name": "Faisal Rafiq",
+      "cgpa": 0.64,
+      "department": "BS in Civil & Environmental Engineering (CEE)"
+    },
+    {
+      "id": 44,
+      "name": "Reem Zahir",
+      "cgpa": 3.77,
+      "department": "Bachelor of Business Administration (BBA)"
+    },
+    {
+      "id": 45,
+      "name": "Rashid Hasan",
+      "cgpa": 2.8,
+      "department": "Bachelor of Architecture"
+    },
+    {
+      "id": 46,
+      "name": "Fadi Qadir",
+      "cgpa": 3.43,
+      "department": "BS in Computer Science & Engineering (CSE)"
+    },
+    {
+      "id": 47,
+      "name": "Laila Bakr",
+      "cgpa": 3.06,
+      "department": "BS in Economics"
+    },
+    {
+      "id": 48,
+      "name": "Hana Hasan",
+      "cgpa": 0.9,
+      "department": "BS in Electrical and Electronics Engineering (EEE)"
+    },
+    {
+      "id": 49,
+      "name": "Mustafa Hussain",
+      "cgpa": 3.52,
+      "department": "Bachelor of Architecture"
+    },
+    {
+      "id": 50,
+      "name": "Mohammad Rafiq",
+      "cgpa": 1.22,
+      "department": "BS in Microbiology"
+    },
+    {
+      "id": 51,
+      "name": "Tariq Wali",
+      "cgpa": 2.9,
+      "department": "Bachelor of Public Health (BPH)"
+    },
+    {
+      "id": 52,
+      "name": "Jamal Bashir",
+      "cgpa": 3.32,
+      "department": "Bachelor of Business Administration (BBA)"
+    },
+    {
+      "id": 53,
+      "name": "Walid Noor",
+      "cgpa": 0.9,
+      "department": "BS in Electrical and Electronics Engineering (EEE)"
+    },
+    {
+      "id": 54,
+      "name": "Idris Ghani",
+      "cgpa": 3.32,
+      "department": "Bachelor of Business Administration (BBA)"
+    },
+    {
+      "id": 55,
+      "name": "Faisal Majid",
+      "cgpa": 2.53,
+      "department": "Bachelor of Business Administration (BBA)"
+    },
+    {
+      "id": 56,
+      "name": "Yusuf Latif",
+      "cgpa": 0.33,
+      "department": "BA in English"
+    },
+    {
+      "id": 57,
+      "name": "Hakim Ali",
+      "cgpa": 3.89,
+      "department": "Bachelor of Public Health (BPH)"
+    },
+    {
+      "id": 58,
+      "name": "Noor Jabbar",
+      "cgpa": 2.99,
+      "department": "BS in Biochemistry and Biotechnology"
+    },
+    {
+      "id": 59,
+      "name": "Mustafa Tahir",
+      "cgpa": 2.73,
+      "department": "BS in Computer Science & Engineering (CSE)"
+    },
+    {
+      "id": 60,
+      "name": "Sana Hassan",
+      "cgpa": 0.31,
+      "department": "BS in Civil & Environmental Engineering (CEE)"
+    },
+    {
+      "id": 61,
+      "name": "Aziz Tariq",
+      "cgpa": 3.43,
+      "department": "Bachelor of Laws (LLB Hons)"
+    },
+    {
+      "id": 62,
+      "name": "Tariq Hussain",
+      "cgpa": 3.83,
+      "department": "BS in Microbiology"
+    },
+    {
+      "id": 63,
+      "name": "Nasir Nasir",
+      "cgpa": 3.32,
+      "department": "BS in Environmental Science and Environmental Management"
+    },
+    {
+      "id": 64,
+      "name": "Karim Kareem",
+      "cgpa": 0.73,
+      "department": "BS in Environmental Science and Environmental Management"
+    },
+    {
+      "id": 65,
+      "name": "Malika Latif",
+      "cgpa": 0.07,
+      "department": "Bachelor of Public Health (BPH)"
+    },
+    {
+      "id": 66,
+      "name": "Maya Amin",
+      "cgpa": 3.52,
+      "department": "BS in Environmental Science and Environmental Management"
+    },
+    {
+      "id": 67,
+      "name": "Sana Zaman",
+      "cgpa": 1.16,
+      "department": "BS in Environmental Science and Environmental Management"
+    },
+    {
+      "id": 68,
+      "name": "Rahim Sharif",
+      "cgpa": 1.71,
+      "department": "BA in English"
+    },
+    {
+      "id": 69,
+      "name": "Rashid Zaman",
+      "cgpa": 1.42,
+      "department": "Bachelor of Laws (LLB Hons)"
+    },
+    {
+      "id": 70,
+      "name": "Yasmin Sharif",
+      "cgpa": 3.06,
+      "department": "BS in Microbiology"
+    },
+    {
+      "id": 71,
+      "name": "Faisal Khan",
+      "cgpa": 3.12,
+      "department": "BPharm"
+    },
+    {
+      "id": 72,
+      "name": "Dina Omar",
+      "cgpa": 1.6,
+      "department": "BS in Electrical and Electronics Engineering (EEE)"
+    },
+    {
+      "id": 73,
+      "name": "Malika Noor",
+      "cgpa": 0.63,
+      "department": "BS in Microbiology"
+    },
+    {
+      "id": 74,
+      "name": "Yasmin Tariq",
+      "cgpa": 1.92,
+      "department": "BS in Environmental Science and Environmental Management"
+    },
+    {
+      "id": 75,
+      "name": "Hana Kareem",
+      "cgpa": 2.64,
+      "department": "Bachelor of Architecture"
+    },
+    {
+      "id": 76,
+      "name": "Sana Khan",
+      "cgpa": 0.97,
+      "department": "BS in Microbiology"
+    },
+    {
+      "id": 77,
+      "name": "Ali Waleed",
+      "cgpa": 3.48,
+      "department": "BS in Microbiology"
+    },
+    {
+      "id": 78,
+      "name": "Amina Hasan",
+      "cgpa": 0.73,
+      "department": "BS in Biochemistry and Biotechnology"
+    },
+    {
+      "id": 79,
+      "name": "Najla Zahir",
+      "cgpa": 1.83,
+      "department": "Bachelor of Architecture"
+    },
+    {
+      "id": 80,
+      "name": "Layla Jabbar",
+      "cgpa": 0.39,
+      "department": "BA in English"
+    },
+    {
+      "id": 81,
+      "name": "Zahra Ali",
+      "cgpa": 1.86,
+      "department": "BA in English"
+    },
+    {
+      "id": 82,
+      "name": "Nadia Din",
+      "cgpa": 0.62,
+      "department": "BS in Microbiology"
+    },
+    {
+      "id": 83,
+      "name": "Leila Nasir",
+      "cgpa": 2.66,
+      "department": "BPharm"
+    },
+    {
+      "id": 84,
+      "name": "Fatima Ibrahim",
+      "cgpa": 0.43,
+      "department": "BS in Computer Science & Engineering (CSE)"
+    },
+    {
+      "id": 85,
+      "name": "Tariq Rahman",
+      "cgpa": 2.14,
+      "department": "BPharm"
+    },
+    {
+      "id": 86,
+      "name": "Mohammad Tariq",
+      "cgpa": 0.94,
+      "department": "BPharm"
+    },
+    {
+      "id": 87,
+      "name": "Sara Bakr",
+      "cgpa": 2.36,
+      "department": "BS in Economics"
+    },
+    {
+      "id": 88,
+      "name": "Bilal Waleed",
+      "cgpa": 0.91,
+      "department": "BS in Microbiology"
+    },
+    {
+      "id": 89,
+      "name": "Omar Saeed",
+      "cgpa": 2.62,
+      "department": "BS in Civil & Environmental Engineering (CEE)"
+    },
+    {
+      "id": 90,
+      "name": "Amina Ali",
+      "cgpa": 3.79,
+      "department": "BA in English"
+    },
+    {
+      "id": 91,
+      "name": "Nadir Umar",
+      "cgpa": 2.55,
+      "department": "Bachelor of Architecture"
+    },
+    {
+      "id": 92,
+      "name": "Iman Noor",
+      "cgpa": 3.01,
+      "department": "BS in Environmental Science and Environmental Management"
+    },
+    {
+      "id": 93,
+      "name": "Basil Khan",
+      "cgpa": 2.81,
+      "department": "BS in Computer Science & Engineering (CSE)"
+    },
+    {
+      "id": 94,
+      "name": "Layla Abdi",
+      "cgpa": 3.6,
+      "department": "BS in Economics"
+    },
+    {
+      "id": 95,
+      "name": "Ibrahim Ghani",
+      "cgpa": 1.63,
+      "department": "BA in English"
+    },
+    {
+      "id": 96,
+      "name": "Mona Ahmed",
+      "cgpa": 1.72,
+      "department": "Bachelor of Public Health (BPH)"
+    },
+    {
+      "id": 97,
+      "name": "Saif Umar",
+      "cgpa": 3.99,
+      "department": "BS in Civil & Environmental Engineering (CEE)"
+    },
+    {
+      "id": 98,
+      "name": "Huda Din",
+      "cgpa": 3.15,
+      "department": "Bachelor of Public Health (BPH)"
+    },
+    {
+      "id": 99,
+      "name": "Tariq Aziz",
+      "cgpa": 1.03,
+      "department": "BS in Environmental Science and Environmental Management"
+    },
+    {
+      "id": 100,
+      "name": "Tariq Chowdhury",
+      "cgpa": 1.55,
+      "department": "BS in Microbiology"
+    }
+  ],
+  "sqlite_sequence": [
+    {
+      "name": "students",
+      "seq": 100
+    }
+  ]
+}
